@@ -21,7 +21,6 @@ var tabulate = function(data, columns) {
         .data(function(row) {
             return columns.map(function (column) {
                 return {column: column, value: row[column] }
-
             })
         })
         .enter()
