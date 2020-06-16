@@ -26,7 +26,7 @@ var tabulate = function(data, columns) {
         })
         .enter()
         .append('td')
-        .text(function (d) {return d.valuee })
+        .text(function (d) {return d.value })
 
     return table;
 }
