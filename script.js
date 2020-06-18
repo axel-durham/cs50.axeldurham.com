@@ -15,6 +15,8 @@
 
 var tabulate = function(data, columns) {  // function with 'data' and 'columns' as inputs 
     var table = d3.select('body').append('table')  // make 'table' a function that selects the CSS element body and then table
+        .attr('class',table)
+    
         var thead = table.append('thead')  // make 'thead' a function that runs 'table' then appends a table header
         var tbody = table.append('tbody')  // make 'tbody' a function that runs 'table' then appends a table body
 
