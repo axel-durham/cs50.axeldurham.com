@@ -14,7 +14,7 @@
 // Great d3 guide: https://alignedleft.com/tutorials/d3/binding-data
 
 var tabulate = function(data, columns) {  // function with 'data' and 'columns' as inputs 
-    var table = d3.select('body').append('table')  // make 'table' a function that selects the CSS element body and then table
+    var table = d3.select('body').select('main').append('table')  // make 'table' a function that selects the CSS element body and then table
         .attr('class','table')
     
         var thead = table.append('thead')  // make 'thead' a function that runs 'table' then appends a table header
