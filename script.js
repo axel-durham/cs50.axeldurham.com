@@ -55,7 +55,7 @@ d3.csv('fish.csv', function (data) {
 function filterTable() {
     var table, tr, td_month, td_location, i;
 
-    var input_month = document.getElementById("season_selector");  // Makes input the season dropdown
+    var input_month = document.getElementById("month_selector");  // Makes input the season dropdown
     var input_location = document.getElementById("location_selector");  // Makes input the season dropdown
     var filter_month = input_month.value.toUpperCase();  // Make filter the uppercase value of the season dropdown
     var filter_location = input_location.value.toUpperCase();  // Make filter the uppercase value of the season dropdown
