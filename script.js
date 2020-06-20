@@ -55,19 +55,25 @@ d3.csv('fish.csv', function (data) {
 function filterTable() {
     var input, filter, table, tr, td, i;
 
-    input = document.getElementById("season_selector");  // Makes input the season dropdown
-    filter = input.value.toUpperCase();  // Make filter the uppercase value of the season dropdown
+    input_season = document.getElementById("season_selector");  // Makes input the season dropdown
+    input_location = document.getElementById("location_selector");  // Makes input the season dropdown
+    filter_season = input.value.toUpperCase();  // Make filter the uppercase value of the season dropdown
+    filter_location = input.value.toUpperCase();  // Make filter the uppercase value of the season dropdown
     table = document.getElementById("fish");  // Make table the table with id 'fish'
     tr = table.getElementsByTagName("tr");  // Make tr all the rows of the table
     
     // Iterate through every row
     for (i=0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[1];  // Make td the current row's second cell (Season)
-        
+        td_season = tr[i].getElementsByTagName("td")[1];  // Make td the current row's second cell (Season)
+        td_location = tr[i].getElementsByTagName("td")[2];
+
         // Make sure there is some table data in the row
-        if (td) {
+        if (td_season || td_location) {
             // Search for filter in the cell's text
-            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            if (
+                td_season.innerHTML.toUpperCase().indexOf(filter_season) > -1 && 
+                td_location.innerHTML.toUpperCase().indexOf(filter_location) > -1
+            ){
                 tr[i].style.display = "";  // Display the row
             } else {
                 tr[i].style.display = "none";  // Don't display the row
