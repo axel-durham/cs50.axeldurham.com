@@ -69,7 +69,7 @@ function sortTable() {
             x = rows[i].getElementsByTagName("TD")[5];
             y = rows[i + 1].getElementsByTagName("TD")[5];
             // Check if the two rows should switch place:
-            if (parseInt(x.innerHTML) < parseInt(y.innerHTML)) {
+            if (parseInt(x.innerHTML.replace(",", "")) < parseInt(y.innerHTML.replace(",", ""))) {
                 // If so, mark as a switch and break the loop:
                 shouldSwitch = true;
                 break;
