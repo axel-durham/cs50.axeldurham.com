@@ -46,33 +46,37 @@ var tabulate = function(data, columns) {  // function with 'data' and 'columns' 
 }
 
 d3.csv('fish.csv', function (data) {
-    var columns = ['Name', 'Month_list', 'Month', 'Location', 'Shadow', 'Selling Price', 'Time']
+    var columns = ['Name', 'Month_list', 'Month', 'Location', 'Shadow', 'Selling Price', 'Time_list', 'Time']
     tabulate(data, columns)
 })
 
 // Adapted from https://stackoverflow.com/questions/51515778/how-to-filter-an-html-table-based-on-drop-down-selected-value/51517077 
 // Comments are my own
 function filterTable() {
-    var table, tr, td_month, td_location, i;
+    var table, tr, td_month, td_location, td_time, i;
 
     var input_month = document.getElementById("month_selector");  // Makes input the season dropdown
     var input_location = document.getElementById("location_selector");  // Makes input the season dropdown
+    var input_time = document.getElementById("time_selector");  // Makes input the season dropdown
     var filter_month = input_month.value.toUpperCase();  // Make filter the uppercase value of the season dropdown
     var filter_location = input_location.value.toUpperCase();  // Make filter the uppercase value of the season dropdown
+    var filter_time = input_time.value.toUpperCase();  // Make filter the uppercase value of the season dropdown
     table = document.getElementById("fish");  // Make table the table with id 'fish'
     tr = table.getElementsByTagName("tr");  // Make tr all the rows of the table
     
     // Iterate through every row
     for (i=0; i < tr.length; i++) {
         td_month = tr[i].getElementsByTagName("td")[1];  // Make td the current row's second cell (Season)
-        td_location = tr[i].getElementsByTagName("td")[2];
+        td_location = tr[i].getElementsByTagName("td")[3];
+        td_time = tr[i].getElementsByTagName("td")[6];
 
         // Make sure there is some table data in the row
-        if (td_month || td_location) {
+        if (td_month || td_location || td_time) {
             // Search for filter in the cell's text
             if (
                 td_month.innerHTML.toUpperCase().indexOf(filter_month) > -1 && 
-                td_location.innerHTML.toUpperCase().indexOf(filter_location) > -1
+                td_location.innerHTML.toUpperCase().indexOf(filter_location) > -1 &&                
+                td_time.innerHTML.toUpperCase().indexOf(filter_time) > -1
             ){
                 tr[i].style.display = "";  // Display the row
             } else {
