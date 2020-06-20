@@ -13,7 +13,7 @@ main
     text-align: center;
 }
 
-main.table
+main .table
 {
     text-align: left;
 }
