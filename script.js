@@ -54,7 +54,7 @@ d3.csv('fish.csv', function (data) {
 // Adapted from https://www.w3schools.com/howto/howto_js_sort_table.asp
 function sortTable() {
     var table, rows, switching, i, x, y, shouldSwitch;
-    table = document.getElementsByClassName("table");
+    table = document.getElementById("fish")
     switching = true;
     // Make a loop that will continue until no switching has been done:
     while (switching) {
