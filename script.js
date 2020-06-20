@@ -46,7 +46,7 @@ var tabulate = function(data, columns) {  // function with 'data' and 'columns' 
 }
 
 d3.csv('fish.csv', function (data) {
-    var columns = ['Name', 'Month', 'Location', 'Shadow', 'Selling Price', 'Time']
+    var columns = ['Name', 'Month_list', 'Month', 'Location', 'Shadow', 'Selling Price', 'Time']
     tabulate(data, columns)
 })
 
