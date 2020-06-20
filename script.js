@@ -53,12 +53,12 @@ d3.csv('fish.csv', function (data) {
 // Adapted from https://stackoverflow.com/questions/51515778/how-to-filter-an-html-table-based-on-drop-down-selected-value/51517077 
 // Comments are my own
 function filterTable() {
-    var input, filter, table, tr, td, i;
+    var table, tr, td_season, td_location, i;
 
-    input_season = document.getElementById("season_selector");  // Makes input the season dropdown
-    input_location = document.getElementById("location_selector");  // Makes input the season dropdown
-    filter_season = input.value.toUpperCase();  // Make filter the uppercase value of the season dropdown
-    filter_location = input.value.toUpperCase();  // Make filter the uppercase value of the season dropdown
+    var input_season = document.getElementById("season_selector");  // Makes input the season dropdown
+    var input_location = document.getElementById("location_selector");  // Makes input the season dropdown
+    var filter_season = input_season.value.toUpperCase();  // Make filter the uppercase value of the season dropdown
+    var filter_location = input_location.value.toUpperCase();  // Make filter the uppercase value of the season dropdown
     table = document.getElementById("fish");  // Make table the table with id 'fish'
     tr = table.getElementsByTagName("tr");  // Make tr all the rows of the table
     
