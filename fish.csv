@@ -1,4 +1,4 @@
-Name,Month_list,Month,Season,Location,Selling Price,Time
+Name,Month_list,Month,Location,Shadow,Selling Price,Time
 Bitterling,"Nov, Dec, Jan, Feb, Mar",November-March,River,Smallest,900,All day
 Pale Chub,"Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec",Year-round,River,Smallest,160,9 a.m. - 4 p.m.
 Crucian Carp,"Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec",Year-round,River,Small,160,All day
