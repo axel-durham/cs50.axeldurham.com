@@ -9,6 +9,8 @@
         <main class="container p-3">
             <form>
                 <div class="form-group">
+
+                    <!-- Month Selector -->
                     <select id="month_selector" onchange="filterTable()" class="form-control text-center" name="month">
                         <option disabled selected value="">Month</option>
                         <option value="Jan">January</option>
@@ -24,16 +26,16 @@
                         <option value="Nov">November</option>
                         <option value="Dec">December</option>
                     </select>
-                </div>
-                <div class="form-group">
+                    
+                    <!-- Location Selector -->
                     <select id="location_selector" onchange="filterTable()" class="form-control" name="location">
                         <option disabled selected value="">Location</option>
                         <option>Sea</option>
                         <option>River</option>
                         <option>Pond</option>
                     </select>
-                </div>
-                <div class="form-group">
+
+                    <!-- Time Selector -->
                     <select id="time_selector" onchange="filterTable()" class="form-control" name="time">
                         <option disabled selected value="">Time</option>
                         <option value="0">12am - 1am</option>
