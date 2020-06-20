@@ -1,6 +1,3 @@
-// From https://gist.github.com/jfreels/6814721
-// All comments are my own
-
 /* 'var' and 'let' declare variables
      'var' used to be the only option, 'let' was added in modern JavaScript
      'let' won't let you declare a variable after using it (good thing)
@@ -13,6 +10,8 @@
 // d3 manipulates the Document Object Model (DOM) which is an object-oriented representation of the web page
 // Great d3 guide: https://alignedleft.com/tutorials/d3/binding-data
 
+// Adapted from https://gist.github.com/jfreels/6814721
+// All comments are my own
 var tabulate = function(data, columns) {  // function with 'data' and 'columns' as inputs 
     var table = d3.select('body').select('main').append('table')  // make 'table' a function that selects the CSS element body and then table
         .attr('class','table')
@@ -52,20 +51,26 @@ d3.csv('fish.csv', function (data) {
 })
 
 // Adapted from https://stackoverflow.com/questions/51515778/how-to-filter-an-html-table-based-on-drop-down-selected-value/51517077 
+// Comments are my own
 function filterTable() {
     var input, filter, table, tr, td, i;
 
-    input = document.getElementById("season_selector");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("fish");
-    tr = table.getElementsByTagName("tr");
+    input = document.getElementById("season_selector");  // Makes input the season dropdown
+    filter = input.value.toUpperCase();  // Make filter the uppercase value of the season dropdown
+    table = document.getElementById("fish");  // Make table the table with id 'fish'
+    tr = table.getElementsByTagName("tr");  // Make tr all the rows of the table
+    
+    // Iterate through every row
     for (i=0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[0];
+        td = tr[i].getElementsByTagName("td")[1];  // Make td the current row's second cell (Season)
+        
+        // Make sure there is some table data in the row
         if (td) {
+            // Search for filter in the cell's text
             if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                tr[i].style.display = "";
+                tr[i].style.display = "";  // Display the row
             } else {
-                tr[i].style.display = "none";
+                tr[i].style.display = "none";  // Don't display the row
             }
         }
     }
