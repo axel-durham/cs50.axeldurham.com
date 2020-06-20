@@ -5,11 +5,12 @@ main .form-control
 
     /* override Bootstrap's 100% width */
     width: auto;
+    text-align: center;
 }
 
 main
 {
-    text-align: center;
+
 }
 
 th:nth-of-type(2)
