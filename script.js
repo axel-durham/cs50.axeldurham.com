@@ -14,7 +14,7 @@
 // All comments are my own
 var tabulate = function(data, columns) {  // function with 'data' and 'columns' as inputs 
     var table = d3.select('body').select('main').append('table')  // make 'table' a function that selects the CSS element body and then table
-        .attr('class','table table-striped')
+        .attr('class','table')
         .attr('id', 'fish')
     
         var thead = table.append('thead')  // make 'thead' a function that runs 'table' then appends a table header
