@@ -1,14 +1,8 @@
-/* table {
-    border-collapse: collapse;
-    border: 2px black solid;
-    font: 12px sans-serif;
-}
+main .form-control
+{
+    /* Center */
+    display: inline-block;
 
-th {
-    border: 1px solid black;
+    /* override Bootstrap's 100% width */
+    width: auto;
 }
-
-td {
-    border: 1px black solid;
-    padding: 5px;
-} */
