@@ -1,16 +1,21 @@
-main .form-control
+main .form-group
 {
     /* Center */
     display: inline-block;
 
     /* override Bootstrap's 100% width */
     width: auto;
-    text-align: center;
+
 }
 
 main
 {
+    text-align: center;
+}
 
+main.table
+{
+    text-align: left;
 }
 
 th:nth-of-type(2)
