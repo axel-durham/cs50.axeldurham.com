@@ -16,6 +16,7 @@
 var tabulate = function(data, columns) {  // function with 'data' and 'columns' as inputs 
     var table = d3.select('body').select('main').append('table')  // make 'table' a function that selects the CSS element body and then table
         .attr('class','table')
+        .attr('id', 'fish')
     
         var thead = table.append('thead')  // make 'thead' a function that runs 'table' then appends a table header
         var tbody = table.append('tbody')  // make 'tbody' a function that runs 'table' then appends a table body
@@ -49,3 +50,23 @@ d3.csv('fish.csv', function (data) {
     var columns = ['Name', 'Season', 'Location']
     tabulate(data, columns)
 })
+
+// Adapted from https://stackoverflow.com/questions/51515778/how-to-filter-an-html-table-based-on-drop-down-selected-value/51517077 
+function filterTable() {
+    var input, filter, table, tr, td, i;
+
+    input = document.getElementById("season_selector");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("fish");
+    tr = table.getElementsByTagName("tr");
+    for (i=0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}
